@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import CreateHang from "./components/CreateHang";
+import JoinHang from "./components/JoinHang";
+import Messages from "./components/Messages";
+import UserProfile from "./components/UserProfile";
+import Navbar from "./components/Navbar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <Switch>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route path="/creatHang" component={CreateHang} />
+            <Route path="/joinHang" component={JoinHang} />
+            <Route path="/messages" component={Messages} />
+            <Route path="/userProfile" component={UserProfile} />
+          </Switch>
+        </Router>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
