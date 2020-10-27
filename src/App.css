@@ -6,7 +6,7 @@ Dark Blue: #034DB5
 White: #F2F4F3
 Black: #22333B
  */
- 
+
 .wrapper {
   height: 100vh;
   width: 100%;
@@ -80,7 +80,7 @@ input.error {
   margin-left: 1%;
 }
 
-.firstName, .lastName, .username, .password {
+.firstName, .lastName, .username, .email, .password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -90,7 +90,7 @@ input.error {
   width: 49%;
 }
 
-.username, .password {
+.username, .email, .password {
   width: 100%;
 }
 

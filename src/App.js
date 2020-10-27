@@ -16,13 +16,13 @@ class App extends Component {
         <Router>
           <CustomNavbar />
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={Signup} />
+            <Route path='/login' component={Login} />
+            <Route path='/home' component={Home} />
             <Route path='/createHang' component={CreateHang} />
             <Route path='/joinHang' component={JoinHang} />
             <Route path='/messages' component={Messages} />
             <Route path='/userProfile' component={UserProfile} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
           </Switch>
         </Router>
     );
