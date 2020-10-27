@@ -24,7 +24,8 @@ Black: #22333B
 }
 
 .createHangBtn:hover {
-    background-color: #0051c3;
+    background-color: #0051c3 !important;
+
 }
 
 .joinHangBtn {
@@ -34,9 +35,13 @@ Black: #22333B
 }
 
 .joinHangBtn:hover {
-    background-color: #952523;
+    background-color: #952523 !important;
 }
 
 .cardText {
+    color: white;
+}
+
+.cardText:hover {
     color: white;
 }
