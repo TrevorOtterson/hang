@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../App.css'
 
 export default class Login extends Component {
   render() {
@@ -22,12 +23,17 @@ export default class Login extends Component {
             <div className="password">
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 className=""
                 placeholder="Password"
                 noValidate
                 onChange={this.handleChange}
               ></input>
+            </div>
+            <div className='loginAccount'>
+                <button type='submit'>Login</button>
+                <br/>
+                <small>Sign Up</small>
             </div>
           </form>
         </div>
