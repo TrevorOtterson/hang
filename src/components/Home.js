@@ -14,7 +14,7 @@ export default class Home extends Component {
             <Link to="/createHang">
               <Card
                 className="createHangBtn"
-                style={{ width: "16rem", height: "18rem" }}
+                style={{ width: "16rem", height: "16rem" }}
               >
                 <Card.Body>
                   <Card.Text className="cardText">CREATE HANG</Card.Text>
@@ -26,10 +26,10 @@ export default class Home extends Component {
             <Link to="/joinHang">
               <Card
                 className="joinHangBtn"
-                style={{ width: "16rem", height: "18rem" }}
+                style={{ width: "16rem", height: "16rem" }}
               >
                 <Card.Body>
-                  <Card.Text className="cardText">JOIN HANG</Card.Text>
+                  <Card.Text className="cardText">JOIN<br/>HANG</Card.Text>
                 </Card.Body>
               </Card>
             </Link>

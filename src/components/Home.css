@@ -2,10 +2,11 @@
 /*
 Dark Red: #6F1D1B
 Dark Green: #53917E
-Dark Blue: #00419c
+Dark Blue: #264653
 White: #F2F4F3
 Black: #22333B
- */
+Light Orange: #f4a261
+*/
 
  .wrapper {
     height: 100vh;
@@ -18,30 +19,42 @@ Black: #22333B
   }
 
 .createHangBtn {
+    margin-top: 15%;
+    margin-right: 10%;
     font-family: 'Playfair Display', serif;
-    background-color: #00419c !important;
+    background-color: #264653 !important;
     border: none !important;
+    border-radius: 100% !important;
 }
 
 .createHangBtn:hover {
-    background-color: #0051c3 !important;
+    background-color: #346173 !important
 
 }
 
 .joinHangBtn {
+    margin-top: 15%;
+    margin-left: 10%;
     font-family: 'Playfair Display', serif;
-    background-color: #6F1D1B !important;
+    background-color: #f4a261 !important;
     border: none !important;
+    border-radius: 100% !important;
 }
 
 .joinHangBtn:hover {
-    background-color: #952523 !important;
+    background-color: #ffb67b !important;
 }
 
 .cardText {
     color: white;
+    margin-top: 27%;
+    font-size: 24pt;
 }
 
 .cardText:hover {
+    color: white;
+}
+
+p {
     color: white;
 }
