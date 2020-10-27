@@ -34,7 +34,7 @@ form {
   font-family: 'Playfair Display', serif;
 }
 
-h1 {
+h1, p {
   text-align: center;
   width: 100%;
   color: black;

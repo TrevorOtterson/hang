@@ -1,0 +1,42 @@
+/* Color Palet */
+/*
+Dark Red: #6F1D1B
+Dark Green: #53917E
+Dark Blue: #00419c
+White: #F2F4F3
+Black: #22333B
+ */
+
+ .wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #53917E;
+  }
+
+.createHangBtn {
+    font-family: 'Playfair Display', serif;
+    background-color: #00419c !important;
+    border: none !important;
+}
+
+.createHangBtn:hover {
+    background-color: #0051c3;
+}
+
+.joinHangBtn {
+    font-family: 'Playfair Display', serif;
+    background-color: #6F1D1B !important;
+    border: none !important;
+}
+
+.joinHangBtn:hover {
+    background-color: #952523;
+}
+
+.cardText {
+    color: white;
+}

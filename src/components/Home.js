@@ -1,21 +1,39 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Row, Col, Card } from "react-bootstrap";
+import "./Home.css";
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <h2>Welcome to Hang</h2>
-        <p>Test text</p>
-        <Link to='/createHang'>
-          <Button bsStyle='primary'>Create Hang</Button>
-        </Link>
-        <Link to='/joinHang'>
-          <Button bsStyle='secondary'>Join Hang</Button>
-        </Link>
-        <Row className='show-grid text-center'>
-          <Col xs={12} sm={4} className='person-wrapper'></Col>
+      <div className="wrapper">
+        <h1>Welcome to Hang</h1>
+        <p>Find Friends With Similar Hobbies!</p>
+        <Row>
+          <Col>
+            <Link to="/createHang">
+              <Card
+                className="createHangBtn"
+                style={{ width: "16rem", height: "18rem" }}
+              >
+                <Card.Body>
+                  <Card.Text className="cardText">CREATE HANG</Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/joinHang">
+              <Card
+                className="joinHangBtn"
+                style={{ width: "16rem", height: "18rem" }}
+              >
+                <Card.Body>
+                  <Card.Text className="cardText">JOIN HANG</Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
         </Row>
       </div>
     );
