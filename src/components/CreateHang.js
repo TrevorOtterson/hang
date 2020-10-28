@@ -52,8 +52,11 @@ export default class CreateHang extends Component {
                 Time: ${this.state.time}
                 Details: ${this.state.details}
             `);
-    } else {
-      console.error("FORM INVAILID - DISPLAY ERROR");
+d
+        }
+        else {
+            console.error('FORM INVALID - DISPLAY ERROR')
+        }
     }
   };
 
@@ -65,34 +68,38 @@ export default class CreateHang extends Component {
     console.log("Name: ", name);
     console.log("Value: ", value);
 
-    switch (name) {
-      case "maxParticipants":
-        formErrors.maxParticipants =
-          value.length < 1 ? "Must type a number of participants." : "";
-        break;
-      case "events":
-        formErrors.events = value.length < 2 ? "Must input an event." : "";
-        break;
-      case "skill":
-        formErrors.skill = value.length < 1 ? "Must input skill level." : "";
-        break;
-      case "location":
-        formErrors.location =
-          value.length < 3 ? "Must input at least 3 characters." : "";
-        break;
-      case "time":
-        formErrors.time =
-          value.length < 6 ? "Must input at least 6 characters." : "";
-        break;
-      case "details":
-        formErrors.details =
-          value.length < 1 ? "Must input at least 1 characters." : "";
-        break;
-      default:
-        break;
-    }
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
-  };
+
+        switch (name) {
+            case 'maxParticipants':
+                formErrors.maxParticipants = 
+                    value.length < 1 ? 'Must type a number of participants.' : '';
+                break;
+            case 'events':
+                formErrors.events = 
+                    value.length < 2 ? 'Must input an event.' : '';
+                break;
+            case 'skill':
+                formErrors.skill = 
+                    value.length < 1 ? 'Must select skill level.' : '';
+                break;
+            case 'location':
+                formErrors.location = 
+                    value.length < 3 ? 'Must input at least 3 characters.' : '';
+                break;
+            case 'time':
+                formErrors.time = 
+                    value.length < 3 ? 'Must input at least 3 characters.' : '';
+                break;
+            case 'details':
+                formErrors.details = 
+                    value.length < 1 ? 'Must input at least 1 characters.' : '';
+                break;
+            default:
+                formErrors={}
+                break;
+        }
+        this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+    };
 
   render() {
     const { formErrors } = this.state;
