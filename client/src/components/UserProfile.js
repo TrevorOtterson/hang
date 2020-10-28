@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
 import { Row, Col, Card, Image } from "react-bootstrap";
 import "./UserProfile.css";
 
@@ -10,10 +9,10 @@ export default class UserProfile extends Component {
         <Row>
           <Col xs={10} md={10} className="wrapper">
             <Row>
-              <h2 className='profileHeader'>Profile</h2>
+              <h2 className="profileHeader">Profile</h2>
             </Row>
             <Row className="profile">
-            <Col xs={0} md={1}></Col>
+              <Col xs={0} md={1}></Col>
               <Col xs={6} md={4} className="profilePic">
                 <Image src="../public/300.png" rounded />
               </Col>
@@ -32,7 +31,7 @@ export default class UserProfile extends Component {
             </Row>
             <Row className="current">
               <Col>
-                <Row >
+                <Row>
                   <h3 className="currentHeader">Current Activities</h3>
                 </Row>
                 <Row>
@@ -56,15 +55,15 @@ export default class UserProfile extends Component {
                 </Row>
                 <Row>
                   <Col>
-                      <ul className="actList">
-                        <li>
-                          <Card className="listItem">
-                            <h4 className="hangName">Name</h4>
-                            <p className="hangDetail">Details</p>
-                          </Card>
-                        </li>
-                      </ul>
-                    </Col>
+                    <ul className="actList">
+                      <li>
+                        <Card className="listItem">
+                          <h4 className="hangName">Name</h4>
+                          <p className="hangDetail">Details</p>
+                        </Card>
+                      </li>
+                    </ul>
+                  </Col>
                 </Row>
               </Col>
             </Row>

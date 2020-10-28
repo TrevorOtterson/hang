@@ -1,74 +1,73 @@
 import React, { Component } from "react";
-import '../App.css'
-import { Link } from 'react-router-dom';
+import "../App.css";
+import { Link } from "react-router-dom";
 
 const formValid = ({ formErrors, ...rest }) => {
-    let valid = true;
-    
-    // validate form errors being empty
-    Object.values(formErrors).forEach(value => {
-        value.length > 0 && (valid = false);
-    })
-    
-    // validate the form being filled out
-    Object.values(rest).forEach(value => {
-        value === null && (valid = false);
-    })
-    
-    return valid;
-}
+  let valid = true;
+
+  // validate form errors being empty
+  Object.values(formErrors).forEach((value) => {
+    value.length > 0 && (valid = false);
+  });
+
+  // validate the form being filled out
+  Object.values(rest).forEach((value) => {
+    value === null && (valid = false);
+  });
+
+  return valid;
+};
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            username: null,
-            password: null,
-            formErrors: {
-                username: '',
-                password: ''
-            }
-        }
-    }
-    
-    handleSubmit = event => {
-        event.preventDefault()
-    
-        if (formValid(this.state)) {
-            console.log(`
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: null,
+      password: null,
+      formErrors: {
+        username: "",
+        password: "",
+      },
+    };
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (formValid(this.state)) {
+      console.log(`
                 --Submitting--
                 Username: ${this.state.username}
                 Password: ${this.state.password}
             `);
-        }
-        else {
-            console.error('FORM INVAILID - DISPLAY ERROR')
-        }
+    } else {
+      console.error("FORM INVAILID - DISPLAY ERROR");
     }
-    
-    handleChange = event => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        let formErrors = this.state.formErrors;
-    
-        console.log('Name: ', name);
-        console.log('Value: ', value);
-    
-        switch (name) {
-            case 'username':
-                formErrors.username = 
-                    value.length < 4 ? 'Must input at least 4 characters.' : '';
-                break;
-            case 'password':
-                formErrors.password = 
-                    value.length < 6 ? 'Must input at least 6 characters.' : '';
-                break;
-            default:
-                break;
-        }
-        this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+  };
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let formErrors = this.state.formErrors;
+
+    console.log("Name: ", name);
+    console.log("Value: ", value);
+
+    switch (name) {
+      case "username":
+        formErrors.username =
+          value.length < 4 ? "Must input at least 4 characters." : "";
+        break;
+      case "password":
+        formErrors.password =
+          value.length < 6 ? "Must input at least 6 characters." : "";
+        break;
+      default:
+        break;
     }
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+  };
 
   render() {
     const { formErrors } = this.state;
@@ -82,36 +81,38 @@ export default class Login extends Component {
             <div className="username">
               <label htmlFor="username">Username</label>
               <input
-                className={formErrors.username.length > 0 ? 'error' : null}
+                className={formErrors.username.length > 0 ? "error" : null}
                 placeholder="Username"
                 type="text"
-                name='username'
+                name="username"
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.username.length > 0 && (
-                  <span className='errorMessage'>{formErrors.username}</span>
+                <span className="errorMessage">{formErrors.username}</span>
               )}
             </div>
             {/* Password */}
             <div className="password">
               <label htmlFor="password">Password</label>
               <input
-                className={formErrors.password.length > 0 ? 'error' : null}
+                className={formErrors.password.length > 0 ? "error" : null}
                 placeholder="Password"
                 type="password"
-                name='password'
+                name="password"
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.password.length > 0 && (
-                  <span className='errorMessage'>{formErrors.password}</span>
+                <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
-            <div className='loginAccount'>
-                <button type='submit'>Login</button>
-                <br/>
-                <Link type='button' href='/' to='/'>Sign Up</Link>
+            <div className="loginAccount">
+              <button type="submit">Login</button>
+              <br />
+              <Link type="button" href="/" to="/">
+                Sign Up
+              </Link>
             </div>
           </form>
         </div>
