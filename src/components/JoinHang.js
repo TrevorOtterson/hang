@@ -7,7 +7,7 @@ export default class JoinHang extends Component {
     return (
       <div className='wrapper'>
         <div className='form-wrapper'>
-          <h2>Join Hang</h2>
+          <h1>Join Hang</h1>
           {/*DropDown */}
           <DropdownButton id="dropdown-basic-button" title="CreateHangInfo Event: Snowboarding">
             <Dropdown.Item href="#/action-1">Participants: 4</Dropdown.Item>
