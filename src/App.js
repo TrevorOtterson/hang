@@ -8,7 +8,7 @@ import Messages from './components/Messages';
 import UserProfile from './components/UserProfile';
 import CustomNavbar from './components/CustomNavbar';
 import Login from './components/Login';
-import Signup from './components/Signup'
+import Signup from './components/Signup';
 
 class App extends Component {
   render() {

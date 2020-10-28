@@ -147,7 +147,7 @@ input.error {
 .loginAccount button:hover {
   color: white;
   background-color: #366375;
-  border: 2px solid #366375;
+  border: 2px solid #22333B;
 }
 
 .loginAccount small {
