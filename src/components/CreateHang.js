@@ -1,49 +1,49 @@
-import React, { Component } from "react";
-import "./CreateHang.css";
+import React, { Component } from 'react';
+import './CreateHang.css'
 
 const formValid = ({ formErrors, ...rest }) => {
-  let valid = true;
+    let valid = true;
 
-  // validate form errors being empty
-  Object.values(formErrors).forEach((value) => {
-    value.length > 0 && (valid = false);
-  });
+    // validate form errors being empty
+    Object.values(formErrors).forEach(value => {
+        value.length > 0 && (valid = false);
+    })
 
-  // validate the form being filled out
-  Object.values(rest).forEach((value) => {
-    value === null && (valid = false);
-  });
+    // validate the form being filled out
+    Object.values(rest).forEach(value => {
+        value === null && (valid = false);
+    })
 
-  return valid;
-};
+    return valid;
+}
 
 export default class CreateHang extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      maxParticipants: null,
-      events: null,
-      skill: null,
-      location: null,
-      time: null,
-      details: null,
-      formErrors: {
-        maxParticipants: "",
-        events: "",
-        skill: "",
-        location: "",
-        time: "",
-        details: "",
-      },
-    };
-  }
+        this.state = {
+            maxParticipants: null,
+            events: null,
+            skill: null,
+            location: null,
+            time: null,
+            details: null,
+            formErrors: {
+                maxParticipants: '',
+                events: '',
+                skill: '',
+                location: '',
+                time: '',
+                details: ''
+            }
+        }
+    }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+    handleSubmit = event => {
+        event.preventDefault()
 
-    if (formValid(this.state)) {
-      console.log(`
+        if (formValid(this.state)) {
+            console.log(`
                 --Submitting--
                 Max Participants: ${this.state.maxParticipants}
                 Event: ${this.state.events}
@@ -52,22 +52,19 @@ export default class CreateHang extends Component {
                 Time: ${this.state.time}
                 Details: ${this.state.details}
             `);
-d
         }
         else {
             console.error('FORM INVALID - DISPLAY ERROR')
         }
     }
-  };
 
-  handleChange = (event) => {
-    event.preventDefault();
-    const { name, value } = event.target;
-    let formErrors = this.state.formErrors;
+    handleChange = event => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        let formErrors = this.state.formErrors;
 
-    console.log("Name: ", name);
-    console.log("Value: ", value);
-
+        console.log('Name: ', name);
+        console.log('Value: ', value);
 
         switch (name) {
             case 'maxParticipants':
@@ -99,118 +96,111 @@ d
                 break;
         }
         this.setState({ formErrors, [name]: value }, () => console.log(this.state))
-    };
+    }
 
   render() {
     const { formErrors } = this.state;
 
     return (
-      <div className="wrapper">
-        <div className="form-wrapper">
+        <div className='wrapper'>
+        <div className='form-wrapper'>
           <h1>Create Hang</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             {/* Max Participants */}
-            <div className="maxParticipants">
-              <label htmlFor="maxParticipants">
-                Max Amount of Participants
-              </label>
+            <div className='maxParticipants'>
+              <label htmlFor='maxParticipants'>Max Amount of Participants</label>
               <input
-                className={
-                  formErrors.maxParticipants.length > 0 ? "error" : null
-                }
-                options="Max Participants"
-                type="input"
-                name="maxParticipants"
+                className={formErrors.maxParticipants.length > 0 ? 'error' : null}
+                options='Max Participants'
+                type='input'
+                name='maxParticipants'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.maxParticipants.length > 0 && (
-                <span className="errorMessage">
-                  {formErrors.maxParticipants}
-                </span>
+                  <span className='errorMessage'>{formErrors.maxParticipants}</span>
               )}
             </div>
             {/* Event */}
-            <div className="events">
-              <label htmlFor="events">Event</label>
+            <div className='events'>
+              <label htmlFor='events'>Event</label>
               <input
-                className={formErrors.events.length > 0 ? "error" : null}
-                placeholder="Enter Event"
-                type="text"
-                name="events"
+                className={formErrors.events.length > 0 ? 'error' : null}
+                placeholder='Enter Event'
+                type='text'
+                name='events'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.events.length > 0 && (
-                <span className="errorMessage">{formErrors.events}</span>
+                  <span className='errorMessage'>{formErrors.events}</span>
               )}
             </div>
             {/* Skill */}
-            <div className="skill">
-              <label htmlFor="skill">Skill</label>
+            <div className='skill'>
+              <label htmlFor='skill'>Skill</label>
               <input
-                className={formErrors.skill.length > 0 ? "error" : null}
-                placeholder="Skill Level"
-                type="text"
-                name="skill"
+                className={formErrors.skill.length > 0 ? 'error' : null}
+                placeholder='Select Skill Level'
+                type='text'
+                name='skill'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.skill.length > 0 && (
-                <span className="errorMessage">{formErrors.skill}</span>
+                  <span className='errorMessage'>{formErrors.skill}</span>
               )}
             </div>
             {/* Time */}
-            <div className="time">
-              <label htmlFor="time">Time</label>
+            <div className='time'>
+              <label htmlFor='time'>Time</label>
               <input
-                className={formErrors.time.length > 0 ? "error" : null}
-                placeholder="Enter Time"
-                type="time"
-                name="time"
+                className={formErrors.time.length > 0 ? 'error' : null}
+                placeholder='Enter Time'
+                type='time'
+                name='time'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.time.length > 0 && (
-                <span className="errorMessage">{formErrors.time}</span>
+                  <span className='errorMessage'>{formErrors.time}</span>
               )}
             </div>
             {/* Location */}
-            <div className="location">
-              <label htmlFor="location">Location</label>
+            <div className='location'>
+              <label htmlFor='location'>Location</label>
               <input
-                className={formErrors.location.length > 0 ? "error" : null}
-                placeholder="Enter Location"
-                type="text"
-                name="location"
+                className={formErrors.location.length > 0 ? 'error' : null}
+                placeholder='Enter Location'
+                type='text'
+                name='location'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.location.length > 0 && (
-                <span className="errorMessage">{formErrors.location}</span>
+                  <span className='errorMessage'>{formErrors.location}</span>
               )}
             </div>
-            {/* Details */}
-            <div className="details">
-              <label htmlFor="details">Details</label>
+             {/* Details */}
+             <div className='details'>
+              <label htmlFor='details'>Details</label>
               <input
-                className={formErrors.details.length > 0 ? "error" : null}
-                placeholder="Enter Details"
-                type="textarea"
-                name="details"
+                className={formErrors.details.length > 0 ? 'error' : null}
+                placeholder='Enter Details'
+                type='details'
+                name='details'
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.details.length > 0 && (
-                <span className="errorMessage">{formErrors.details}</span>
+                  <span className='errorMessage'>{formErrors.details}</span>
               )}
             </div>
-            <div className="createHang">
-              <button type="submit">Create Hang</button>
+            <div className='createHang'>
+                <button type='submit'>Create Hang</button>
             </div>
           </form>
         </div>
       </div>
-    );
-  }
+    )};
 }
