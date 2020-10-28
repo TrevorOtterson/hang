@@ -1,0 +1,156 @@
+/* Color Palet */
+/*
+Dark Red: #6F1D1B
+Dark Green: #53917E
+Dark Blue: #264653
+White: #F2F4F3
+Black: #22333B
+Light Orange: #f4a261
+ */
+
+/* Color Palet */
+/*
+Dark Red: #6F1D1B
+Dark Green: #53917E
+Dark Blue: #264653
+White: #F2F4F3
+Black: #22333B
+Light Orange: #f4a261
+
+ */
+
+.wrapper {
+    background-color: #53917E;
+    border: solid;
+    border-color: #22333B;
+    width: 80vw;
+    margin: auto;
+    margin-top: 1%;
+    padding: 25%;
+}
+
+.profileHeader {
+    border: solid;
+    border-color: #22333B;
+    width: 65vw;
+    text-align: center;
+    margin: auto;
+    padding: 1%;
+    padding-top: 1%;
+    margin-top: 5%;
+    background-color: #264653;
+    color: #F2F4F3;
+}
+
+.profile {
+    border: solid;
+    border-color: hsl(199, 27%, 18%);
+    width: 75vw;
+
+}
+.profilePic {
+    border: solid;
+    border-color: #22333B;
+}
+
+.userInfo {
+    border: solid;
+    border-color: #22333B;
+    text-align: left;
+    
+}
+
+.userDetail {
+    text-align: left;
+}
+
+.bio {
+    border: solid;
+    border-color: #22333B;
+    width: 75vw;
+}
+
+.bioHeader {
+    border: solid;
+    border-color: #22333B;
+    width: 55vw;
+    margin: auto;
+    padding: 1%;
+    background-color: #264653;
+    color: #F2F4F3;
+    margin-top: 1%;
+}
+
+.bioBody {
+    border: solid;
+    border-color: #22333B;
+    width: 55vw;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.current {
+    border: solid;
+    border-color: #22333B;
+    width: 75vw;
+}
+
+.currentHeader {
+    border: solid;
+    border-color: #22333B;
+    width: 55vw;
+    margin: auto;
+    padding: 1%;
+    background-color: #264653;
+    color: #F2F4F3;
+    margin-top: 1%;
+}
+
+.pastHeader {
+    border: solid;
+    border-color: #22333B;
+    width: 55vw;
+    margin: auto;
+    padding: 1%;
+    background-color: #264653;
+    color: #F2F4F3;
+    margin-top: 1%;
+}
+
+.actList {
+    list-style-type: none;
+}
+
+.hangName {
+    padding: 10px;
+}
+
+.hangDetail {
+    text-align: left;
+    padding: 10px;
+}
+
+
+.past {
+    border: solid;
+    border-color: #22333B;
+    width: 75vw;
+    margin-bottom: 20px;
+}
+
+.listItem {
+    border: solid;
+    border-color: #22333B;
+    width: 50vw;
+    margin: auto;
+    margin-top: 1%;
+}
+
+
+
+
+
+
+
+
