@@ -54,7 +54,7 @@ export default class CreateHang extends Component {
             `);
         }
         else {
-            console.error('FORM INVAILID - DISPLAY ERROR')
+            console.error('FORM INVALID - DISPLAY ERROR')
         }
     }
 
@@ -85,13 +85,14 @@ export default class CreateHang extends Component {
                 break;
             case 'time':
                 formErrors.time = 
-                    value.length < 6 ? 'Must input at least 6 characters.' : '';
+                    value.length < 3 ? 'Must input at least 3 characters.' : '';
                 break;
             case 'details':
                 formErrors.details = 
                     value.length < 1 ? 'Must input at least 1 characters.' : '';
                 break;
             default:
+                formErrors={}
                 break;
         }
         this.setState({ formErrors, [name]: value }, () => console.log(this.state))
