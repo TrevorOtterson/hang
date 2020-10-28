@@ -7,8 +7,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h1 className='homeTitle'>Welcome to Hang</h1>
-        <p  className='homeTitle'> Find Friends With Similar Hobbies!</p>
+        <h1 className="homeTitle">Welcome to Hang</h1>
+        <p className="homeTitle"> Find Friends With Similar Hobbies!</p>
         <Row>
           <Col>
             <Link to="/createHang">
@@ -29,7 +29,11 @@ export default class Home extends Component {
                 style={{ width: "16rem", height: "16rem" }}
               >
                 <Card.Body>
-                  <Card.Text className="cardText">JOIN<br/>HANG</Card.Text>
+                  <Card.Text className="cardText">
+                    JOIN
+                    <br />
+                    HANG
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Link>
