@@ -7,8 +7,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h1>Welcome to Hang</h1>
-        <p>Find Friends With Similar Hobbies!</p>
+        <h1 className='homeTitle'>Welcome to Hang</h1>
+        <p  className='homeTitle'> Find Friends With Similar Hobbies!</p>
         <Row>
           <Col>
             <Link to="/createHang">
