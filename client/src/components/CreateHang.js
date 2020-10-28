@@ -44,21 +44,21 @@ export default class CreateHang extends Component {
 
     if (formValid(this.state)) {
       console.log(`
-                --Submitting--
-                Max Participants: ${this.state.maxParticipants}
-                Event: ${this.state.events}
-                Skill Level: ${this.state.skill}
-                Location: ${this.state.location}
-                Time: ${this.state.time}
-                Details: ${this.state.details}
-            `);
-d
-        }
-        else {
-            console.error('FORM INVALID - DISPLAY ERROR')
-        }
+      --Submitting--
+      Max Participants: ${this.state.maxParticipants}
+      Event: ${this.state.events}
+      Skill Level: ${this.state.skill}
+      Location: ${this.state.location}
+      Time: ${this.state.time}
+      Details: ${this.state.details}
+      `);
     }
-  };
+    else {
+        console.error('FORM INVALID - DISPLAY ERROR')
+    }
+
+  }
+
 
   handleChange = (event) => {
     event.preventDefault();
