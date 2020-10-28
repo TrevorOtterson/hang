@@ -13,6 +13,7 @@ export default class CustomNavbar extends Component {
       <Nav.Link className='navText' href="/home" to="/home">Home</Nav.Link>
       <Nav.Link className='navText' href="/messages" to="/messages">Messages</Nav.Link>
       <Nav.Link className='navText' href="/userProfile" to="/userProfile">Profile</Nav.Link>
+      <Nav.Link className='navText' href="/Login" to="/Login">Logout</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
