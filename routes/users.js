@@ -8,15 +8,11 @@ const User = require("../models/User");
 
 
 
-// @route POST api/users/register
-// @desc Register user
-// @access Public
 router.post("/register", passport.authenticate("signup"), (req, res) => {
     res.json(req.flash("error"))
 });
-// @route POST api/users/login
-// @desc Login user and return JWT token
-// @access Public
+
+
 router.post("/login", passport.authenticate("local"), (req, res) => {
     res.json(req.flash("error"))
 
