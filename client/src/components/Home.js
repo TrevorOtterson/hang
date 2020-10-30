@@ -11,8 +11,6 @@ export default class Home extends Component {
         <div className="logo">
         <img src={logo} alt="logo"/>
         </div>
-        <h1 className="homeTitle">Welcome to Hang</h1>
-        <p className="homeTitle"> Find Friends With Similar Hobbies!</p>
         <Row>
           <Col>
             <Link to="/createHang">
