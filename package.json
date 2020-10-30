@@ -8,21 +8,27 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "firebase": "^8.0.0",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-firebase-hooks": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "validator": "^13.1.17"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +44,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+
+  "main": "index.js",
+
+  "main": "server.js",
+  "devDependencies": {},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorOtterson/hang.git"
+  },
+
+  "author": "",
+  "license": "ISC",
+
+  "keywords": [
+    "mern",
+    "hang"
+  ],
+  "author": "Group 4",
+  "license": "MIT",
+
+  "bugs": {
+    "url": "https://github.com/TrevorOtterson/hang/issues"
+  },
+  "homepage": "https://github.com/TrevorOtterson/hang#readme"
+
 }
+
+
+
