@@ -2,49 +2,48 @@ import React, { Component } from 'react';
 import './CreateHang.css'
 
 const formValid = ({ formErrors, ...rest }) => {
-    let valid = true;
+  let valid = true;
 
-    // validate form errors being empty
-    Object.values(formErrors).forEach(value => {
-        value.length > 0 && (valid = false);
-    })
+  // validate form errors being empty
+  Object.values(formErrors).forEach(value => {
+    value.length > 0 && (valid = false);
+  })
 
-    // validate the form being filled out
-    Object.values(rest).forEach(value => {
-        value === null && (valid = false);
-    })
+  // validate the form being filled out
+  Object.values(rest).forEach(value => {
+    value === null && (valid = false);
+  })
 
-    return valid;
+  return valid;
 }
 
 export default class CreateHang extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            maxParticipants: null,
-            events: null,
-            skill: null,
-            location: null,
-            time: null,
-            details: null,
-            formErrors: {
-                maxParticipants: '',
-                events: '',
-                skill: '',
-                location: '',
-                time: '',
-                details: ''
-            }
-        }
+    this.state = {
+      maxParticipants: null,
+      events: null,
+      skill: null,
+      location: null,
+      time: null,
+      details: null,
+      formErrors: {
+        maxParticipants: '',
+        events: '',
+        skill: '',
+        location: '',
+        time: '',
+        details: ''
+      }
     }
+  }
 
-    handleSubmit = event => {
-        event.preventDefault()
+  handleSubmit = event => {
+    event.preventDefault()
 
-<<<<<<< HEAD:src/components/CreateHang.js
-        if (formValid(this.state)) {
-            console.log(`
+    if (formValid(this.state)) {
+      console.log(`
                 --Submitting--
                 Max Participants: ${this.state.maxParticipants}
                 Event: ${this.state.events}
@@ -53,103 +52,57 @@ export default class CreateHang extends Component {
                 Time: ${this.state.time}
                 Details: ${this.state.details}
             `);
-        }
-        else {
-            console.error('FORM INVALID - DISPLAY ERROR')
-        }
-=======
-    if (formValid(this.state)) {
-      console.log(`
-      --Submitting--
-      Max Participants: ${this.state.maxParticipants}
-      Event: ${this.state.events}
-      Skill Level: ${this.state.skill}
-      Location: ${this.state.location}
-      Time: ${this.state.time}
-      Details: ${this.state.details}
-      `);
-    } else {
-      console.error("FORM INVALID - DISPLAY ERROR");
->>>>>>> upstream/master:client/src/components/CreateHang.js
     }
-
-    handleChange = event => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        let formErrors = this.state.formErrors;
-
-<<<<<<< HEAD:src/components/CreateHang.js
-        console.log('Name: ', name);
-        console.log('Value: ', value);
-
-        switch (name) {
-            case 'maxParticipants':
-                formErrors.maxParticipants = 
-                    value.length < 1 ? 'Must type a number of participants.' : '';
-                break;
-            case 'events':
-                formErrors.events = 
-                    value.length < 2 ? 'Must input an event.' : '';
-                break;
-            case 'skill':
-                formErrors.skill = 
-                    value.length < 1 ? 'Must select skill level.' : '';
-                break;
-            case 'location':
-                formErrors.location = 
-                    value.length < 3 ? 'Must input at least 3 characters.' : '';
-                break;
-            case 'time':
-                formErrors.time = 
-                    value.length < 3 ? 'Must input at least 3 characters.' : '';
-                break;
-            case 'details':
-                formErrors.details = 
-                    value.length < 1 ? 'Must input at least 1 characters.' : '';
-                break;
-            default:
-                formErrors={}
-                break;
-        }
-        this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+    else {
+      console.error('FORM INVALID - DISPLAY ERROR')
     }
-=======
+  }
+
+  handleChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let formErrors = this.state.formErrors;
+
+    console.log('Name: ', name);
+    console.log('Value: ', value);
+
     switch (name) {
-      case "maxParticipants":
+      case 'maxParticipants':
         formErrors.maxParticipants =
-          value.length < 1 ? "Must type a number of participants." : "";
+          value.length < 1 ? 'Must type a number of participants.' : '';
         break;
-      case "events":
-        formErrors.events = value.length < 2 ? "Must input an event." : "";
+      case 'events':
+        formErrors.events =
+          value.length < 2 ? 'Must input an event.' : '';
         break;
-      case "skill":
-        formErrors.skill = value.length < 1 ? "Must select skill level." : "";
+      case 'skill':
+        formErrors.skill =
+          value.length < 1 ? 'Must select skill level.' : '';
         break;
-      case "location":
+      case 'location':
         formErrors.location =
-          value.length < 3 ? "Must input at least 3 characters." : "";
+          value.length < 3 ? 'Must input at least 3 characters.' : '';
         break;
-      case "time":
+      case 'time':
         formErrors.time =
-          value.length < 3 ? "Must input at least 3 characters." : "";
+          value.length < 3 ? 'Must input at least 3 characters.' : '';
         break;
-      case "details":
+      case 'details':
         formErrors.details =
-          value.length < 1 ? "Must input at least 1 characters." : "";
+          value.length < 1 ? 'Must input at least 1 characters.' : '';
         break;
       default:
-        formErrors = {};
+        formErrors = {}
         break;
     }
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
-  };
->>>>>>> upstream/master:client/src/components/CreateHang.js
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+  }
 
   render() {
     const { formErrors } = this.state;
 
     return (
-        <div className='wrapper'>
+      <div className='wrapper'>
         <div className='form-wrapper'>
           <h1>Create Hang</h1>
           <form onSubmit={this.handleSubmit} noValidate>
@@ -165,7 +118,7 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.maxParticipants.length > 0 && (
-                  <span className='errorMessage'>{formErrors.maxParticipants}</span>
+                <span className='errorMessage'>{formErrors.maxParticipants}</span>
               )}
             </div>
             {/* Event */}
@@ -180,7 +133,7 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.events.length > 0 && (
-                  <span className='errorMessage'>{formErrors.events}</span>
+                <span className='errorMessage'>{formErrors.events}</span>
               )}
             </div>
             {/* Skill */}
@@ -195,7 +148,7 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.skill.length > 0 && (
-                  <span className='errorMessage'>{formErrors.skill}</span>
+                <span className='errorMessage'>{formErrors.skill}</span>
               )}
             </div>
             {/* Time */}
@@ -210,7 +163,7 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.time.length > 0 && (
-                  <span className='errorMessage'>{formErrors.time}</span>
+                <span className='errorMessage'>{formErrors.time}</span>
               )}
             </div>
             {/* Location */}
@@ -225,11 +178,11 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.location.length > 0 && (
-                  <span className='errorMessage'>{formErrors.location}</span>
+                <span className='errorMessage'>{formErrors.location}</span>
               )}
             </div>
-             {/* Details */}
-             <div className='details'>
+            {/* Details */}
+            <div className='details'>
               <label htmlFor='details'>Details</label>
               <input
                 className={formErrors.details.length > 0 ? 'error' : null}
@@ -240,14 +193,15 @@ export default class CreateHang extends Component {
                 onChange={this.handleChange}
               />
               {formErrors.details.length > 0 && (
-                  <span className='errorMessage'>{formErrors.details}</span>
+                <span className='errorMessage'>{formErrors.details}</span>
               )}
             </div>
             <div className='createHang'>
-                <button type='submit'>Create Hang</button>
+              <button type='submit'>Create Hang</button>
             </div>
           </form>
         </div>
       </div>
-    )};
+    )
+  };
 }
