@@ -36,6 +36,7 @@ export default class CreateHang extends Component {
     event.preventDefault()
     if (formValid(this.state)) {
       console.log(`
+<<<<<<< HEAD:src/components/CreateHang.js
                 --Submitting--
                 Max Participants: ${this.state.maxParticipants}
                 Event: ${this.state.events}
@@ -44,6 +45,18 @@ export default class CreateHang extends Component {
                 Time: ${this.state.time}
                 Details: ${this.state.details}
             `);
+=======
+      --Submitting--
+      Max Participants: ${this.state.maxParticipants}
+      Event: ${this.state.events}
+      Skill Level: ${this.state.skill}
+      Location: ${this.state.location}
+      Time: ${this.state.time}
+      Details: ${this.state.details}
+      `);
+    } else {
+      console.error("FORM INVALID - DISPLAY ERROR");
+>>>>>>> upstream/master:client/src/components/CreateHang.js
     }
     else {
       console.error('FORM INVALID - DISPLAY ERROR')
@@ -53,6 +66,7 @@ export default class CreateHang extends Component {
     event.preventDefault();
     const { name, value } = event.target;
     let formErrors = this.state.formErrors;
+<<<<<<< HEAD:src/components/CreateHang.js
     console.log('Name: ', name);
     console.log('Value: ', value);
     switch (name) {
@@ -86,6 +100,42 @@ export default class CreateHang extends Component {
     }
     this.setState({ formErrors, [name]: value }, () => console.log(this.state))
   }
+=======
+
+    console.log("Name: ", name);
+    console.log("Value: ", value);
+
+    switch (name) {
+      case "maxParticipants":
+        formErrors.maxParticipants =
+          value.length < 1 ? "Must type a number of participants." : "";
+        break;
+      case "events":
+        formErrors.events = value.length < 2 ? "Must input an event." : "";
+        break;
+      case "skill":
+        formErrors.skill = value.length < 1 ? "Must select skill level." : "";
+        break;
+      case "location":
+        formErrors.location =
+          value.length < 3 ? "Must input at least 3 characters." : "";
+        break;
+      case "time":
+        formErrors.time =
+          value.length < 3 ? "Must input at least 3 characters." : "";
+        break;
+      case "details":
+        formErrors.details =
+          value.length < 1 ? "Must input at least 1 characters." : "";
+        break;
+      default:
+        formErrors = {};
+        break;
+    }
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+  };
+
+>>>>>>> upstream/master:client/src/components/CreateHang.js
   render() {
     const { formErrors } = this.state;
     return (
