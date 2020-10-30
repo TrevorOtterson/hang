@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import "./CreateHang.css";
+=======
+import React, { Component } from 'react';
+import './CreateHang.css'
+>>>>>>> master
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
 
   // validate form errors being empty
+<<<<<<< HEAD
   Object.values(formErrors).forEach((value) => {
     value.length > 0 && (valid = false);
   });
@@ -16,6 +22,19 @@ const formValid = ({ formErrors, ...rest }) => {
 
   return valid;
 };
+=======
+  Object.values(formErrors).forEach(value => {
+    value.length > 0 && (valid = false);
+  })
+
+  // validate the form being filled out
+  Object.values(rest).forEach(value => {
+    value === null && (valid = false);
+  })
+
+  return valid;
+}
+>>>>>>> master
 
 export default class CreateHang extends Component {
   constructor(props) {
@@ -29,6 +48,7 @@ export default class CreateHang extends Component {
       time: null,
       details: null,
       formErrors: {
+<<<<<<< HEAD
         maxParticipants: "",
         events: "",
         skill: "",
@@ -41,6 +61,20 @@ export default class CreateHang extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+=======
+        maxParticipants: '',
+        events: '',
+        skill: '',
+        location: '',
+        time: '',
+        details: ''
+      }
+    }
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+>>>>>>> master
 
     if (formValid(this.state)) {
       console.log(`
@@ -52,16 +86,27 @@ export default class CreateHang extends Component {
                 Time: ${this.state.time}
                 Details: ${this.state.details}
             `);
+<<<<<<< HEAD
     } else {
       console.error("FORM INVAILID - DISPLAY ERROR");
     }
   };
 
   handleChange = (event) => {
+=======
+    }
+    else {
+      console.error('FORM INVALID - DISPLAY ERROR')
+    }
+  }
+
+  handleChange = event => {
+>>>>>>> master
     event.preventDefault();
     const { name, value } = event.target;
     let formErrors = this.state.formErrors;
 
+<<<<<<< HEAD
     console.log("Name: ", name);
     console.log("Value: ", value);
 
@@ -93,11 +138,48 @@ export default class CreateHang extends Component {
     }
     this.setState({ formErrors, [name]: value }, () => console.log(this.state));
   };
+=======
+    console.log('Name: ', name);
+    console.log('Value: ', value);
+
+    switch (name) {
+      case 'maxParticipants':
+        formErrors.maxParticipants =
+          value.length < 1 ? 'Must type a number of participants.' : '';
+        break;
+      case 'events':
+        formErrors.events =
+          value.length < 2 ? 'Must input an event.' : '';
+        break;
+      case 'skill':
+        formErrors.skill =
+          value.length < 1 ? 'Must select skill level.' : '';
+        break;
+      case 'location':
+        formErrors.location =
+          value.length < 3 ? 'Must input at least 3 characters.' : '';
+        break;
+      case 'time':
+        formErrors.time =
+          value.length < 3 ? 'Must input at least 3 characters.' : '';
+        break;
+      case 'details':
+        formErrors.details =
+          value.length < 1 ? 'Must input at least 1 characters.' : '';
+        break;
+      default:
+        formErrors = {}
+        break;
+    }
+    this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+  }
+>>>>>>> master
 
   render() {
     const { formErrors } = this.state;
 
     return (
+<<<<<<< HEAD
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Create Hang</h1>
@@ -114,10 +196,25 @@ export default class CreateHang extends Component {
                 options="Max Participants"
                 type="input"
                 name="maxParticipants"
+=======
+      <div className='wrapper'>
+        <div className='form-wrapper'>
+          <h1>Create Hang</h1>
+          <form onSubmit={this.handleSubmit} noValidate>
+            {/* Max Participants */}
+            <div className='maxParticipants'>
+              <label htmlFor='maxParticipants'>Max Amount of Participants</label>
+              <input
+                className={formErrors.maxParticipants.length > 0 ? 'error' : null}
+                options='Max Participants'
+                type='input'
+                name='maxParticipants'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.maxParticipants.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">
                   {formErrors.maxParticipants}
                 </span>
@@ -131,10 +228,24 @@ export default class CreateHang extends Component {
                 placeholder="Enter Event"
                 type="text"
                 name="events"
+=======
+                <span className='errorMessage'>{formErrors.maxParticipants}</span>
+              )}
+            </div>
+            {/* Event */}
+            <div className='events'>
+              <label htmlFor='events'>Event</label>
+              <input
+                className={formErrors.events.length > 0 ? 'error' : null}
+                placeholder='Enter Event'
+                type='text'
+                name='events'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.events.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">{formErrors.events}</span>
               )}
             </div>
@@ -146,10 +257,24 @@ export default class CreateHang extends Component {
                 placeholder="Skill Level"
                 type="text"
                 name="skill"
+=======
+                <span className='errorMessage'>{formErrors.events}</span>
+              )}
+            </div>
+            {/* Skill */}
+            <div className='skill'>
+              <label htmlFor='skill'>Skill</label>
+              <input
+                className={formErrors.skill.length > 0 ? 'error' : null}
+                placeholder='Select Skill Level'
+                type='text'
+                name='skill'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.skill.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">{formErrors.skill}</span>
               )}
             </div>
@@ -161,10 +286,24 @@ export default class CreateHang extends Component {
                 placeholder="Enter Time"
                 type="time"
                 name="time"
+=======
+                <span className='errorMessage'>{formErrors.skill}</span>
+              )}
+            </div>
+            {/* Time */}
+            <div className='time'>
+              <label htmlFor='time'>Time</label>
+              <input
+                className={formErrors.time.length > 0 ? 'error' : null}
+                placeholder='Enter Time'
+                type='time'
+                name='time'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.time.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">{formErrors.time}</span>
               )}
             </div>
@@ -176,10 +315,24 @@ export default class CreateHang extends Component {
                 placeholder="Enter Location"
                 type="text"
                 name="location"
+=======
+                <span className='errorMessage'>{formErrors.time}</span>
+              )}
+            </div>
+            {/* Location */}
+            <div className='location'>
+              <label htmlFor='location'>Location</label>
+              <input
+                className={formErrors.location.length > 0 ? 'error' : null}
+                placeholder='Enter Location'
+                type='text'
+                name='location'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.location.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">{formErrors.location}</span>
               )}
             </div>
@@ -191,19 +344,46 @@ export default class CreateHang extends Component {
                 placeholder="Enter Details"
                 type="textarea"
                 name="details"
+=======
+                <span className='errorMessage'>{formErrors.location}</span>
+              )}
+            </div>
+            {/* Details */}
+            <div className='details'>
+              <label htmlFor='details'>Details</label>
+              <input
+                className={formErrors.details.length > 0 ? 'error' : null}
+                placeholder='Enter Details'
+                type='details'
+                name='details'
+>>>>>>> master
                 noValidate
                 onChange={this.handleChange}
               />
               {formErrors.details.length > 0 && (
+<<<<<<< HEAD
                 <span className="errorMessage">{formErrors.details}</span>
               )}
             </div>
             <div className="createHang">
               <button type="submit">Create Hang</button>
+=======
+                <span className='errorMessage'>{formErrors.details}</span>
+              )}
+            </div>
+            <div className='createHang'>
+              <button type='submit'>Create Hang</button>
+>>>>>>> master
             </div>
           </form>
         </div>
       </div>
+<<<<<<< HEAD
     );
   }
 }
+=======
+    )
+  };
+}
+>>>>>>> master

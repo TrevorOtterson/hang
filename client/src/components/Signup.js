@@ -76,8 +76,13 @@ export default class Signup extends Component {
         const { name, value } = event.target;
         let formErrors = this.state.formErrors;
 
+<<<<<<< HEAD
         // console.log('Name: ', name);
         // console.log('Value: ', value);
+=======
+        console.log('Name: ', name);
+        console.log('Value: ', value);
+>>>>>>> master
 
         switch (name) {
             case 'firstName':
@@ -103,7 +108,11 @@ export default class Signup extends Component {
             default:
                 break;
         }
+<<<<<<< HEAD
         this.setState({ formErrors, [name]: value }, () => { })
+=======
+        this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+>>>>>>> master
     }
 
     render() {
