@@ -28,6 +28,14 @@ Light Orange: #f4a261
   background-color: #F2F4F3;
 }
 
+.joinTitle {
+  padding-bottom: 1%;
+}
+
+.hangRow {
+  padding-bottom: 1%;
+}
+
 form {
   width: 100%;
   display: flex;
