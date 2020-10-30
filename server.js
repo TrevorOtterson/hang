@@ -3,18 +3,23 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 const app = express();
-const passport = require("passport")
-
+const passport = require("./passport/setup")
 const users = require("./routes/users");
+const flash = require("connect-flash")
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
     bodyParser.urlencoded({
         extended: false
     })
 );
-app.use(bodyParser.json());
 
 const db = require("./config/keys").mongoURI;
+
+
+
 
 
 mongoose
@@ -26,9 +31,11 @@ mongoose
     .catch(err => console.log(err));
 
 // Passport middleware
+app.use(require('express-session')({ secret: "sillystring", resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
-// Passport config
-require("./config/passport")(passport);
+app.use(passport.session())
+app.use(flash())
 // Routes
 app.use("/api/users", users);
 
