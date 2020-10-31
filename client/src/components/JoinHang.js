@@ -11,6 +11,20 @@ export default class JoinHang extends Component {
             <Col xs={2} md={4} className="dropdown">
               {/*DropDown */}
 
+              <DropdownButton
+                id="dropdown-basic-button"
+                title=" Hang { }"
+              >
+                {/* <Dropdown.Item>participants: {hang.participants}: {}</Dropdown.Item>
+                <Dropdown.Item>event: {hang.event} {}</Dropdown.Item>
+                <Dropdown.Item>skill: {hang.skill} {}</Dropdown.Item>
+                <Dropdown.Item>location: {hang.location} {}</Dropdown.Item>
+                <Dropdown.Item>detail: {hang.details} {}</Dropdown.Item> */}
+              </DropdownButton>
+            </Col>
+            <Col xs={2} md={4} ></Col>
+            <Col xs={2} md={4} className="join">
+              <Button variant="info">Join Hang</Button>{' '}
                 <DropdownButton
                   id="dropdown-basic-button"
                   title=" Hang { }"
@@ -30,6 +44,7 @@ export default class JoinHang extends Component {
 
         </div>
       </div>
+
     );
   };
 }
