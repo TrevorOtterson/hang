@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import { Row, Col, Card, Image } from "react-bootstrap";
 // import { Link } from 'react-router-dom';
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
 import "./UserProfile.css";
 
 export default class UserProfile extends Component {
   render() {
     return (
       <div>
+        
         <div className="profileMargins">
           <div>
             <img className="profilePic" alt="" />
@@ -44,4 +46,4 @@ export default class UserProfile extends Component {
       </div>
     );
   }
-}
+};

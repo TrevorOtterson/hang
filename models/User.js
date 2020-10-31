@@ -26,5 +26,16 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     }
+
 });
+
+UserSchema.statics.checkExistingField = async (field, value) => {
+    return await User.findOne({
+        [`${field}`]: value
+    }
+
+    )
+}
+
+
 module.exports = User = mongoose.model("users", UserSchema);
