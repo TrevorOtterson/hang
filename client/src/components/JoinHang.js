@@ -41,6 +41,19 @@ export default class JoinHang extends Component {
             <Col xs={2} md={4} ></Col>
             <Col xs={2} md={4} className="join">
               <Button variant="info">Join Hang</Button>{' '}
+                <DropdownButton
+                  id="dropdown-basic-button"
+                  title=" Hang { }"
+                >
+                  <Dropdown.Item>Participants: { }</Dropdown.Item>
+                  <Dropdown.Item>Skill Level: { }</Dropdown.Item>
+                  <Dropdown.Item>Location: { }</Dropdown.Item>
+                  <Dropdown.Item>Details: { }</Dropdown.Item>
+                </DropdownButton>
+            </Col>
+            <Col xs={2} md={4} ></Col>
+            <Col xs={2} md={4} className="join">
+                <Button variant="info">Join Hang</Button>{' '}
             </Col>
           </Row>
 
