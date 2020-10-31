@@ -5,6 +5,8 @@ const port = process.env.PORT || 5000;
 const app = express();
 const passport = require("./passport/setup")
 const users = require("./routes/users");
+const hangs = require("./routes/hangs")
+
 const flash = require("connect-flash")
 
 app.use(express.json());
@@ -38,5 +40,6 @@ app.use(passport.session())
 app.use(flash())
 // Routes
 app.use("/api/users", users);
+app.use("/api/hangs", hangs);
 
 app.listen(port, () => console.log(`Server running on port ${port} !`));
