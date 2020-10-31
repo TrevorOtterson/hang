@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownButton, Button, Row, Col } from "react-bootstrap";
-
+import api from "../utils/API"
+import axios from "axios"
 export default class JoinHang extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
+
+
+    let hang
+    axios.get("api/hang").then((response) => {
+      hang = response
+      console.log(hang)
+      this.setState(response)
+
+    })
     return (
-      <div className="wrapper">
+      <div className="wrapper" >
         <div className="form-wrapper">
           <h1 className="joinTitle">Join Hang</h1>
           <Row className="hangRow">
@@ -13,13 +29,13 @@ export default class JoinHang extends Component {
 
               <DropdownButton
                 id="dropdown-basic-button"
-                title=" Hang { }"
-              >
-                {/* <Dropdown.Item>participants: {hang.participants}: {}</Dropdown.Item>
-                <Dropdown.Item>event: {hang.event} {}</Dropdown.Item>
-                <Dropdown.Item>skill: {hang.skill} {}</Dropdown.Item>
-                <Dropdown.Item>location: {hang.location} {}</Dropdown.Item>
-                <Dropdown.Item>detail: {hang.details} {}</Dropdown.Item> */}
+                title=" Hang { }">
+                {/* {this.state.hang.data.map(() => {
+                  console.log(data)
+                }
+                )} */}
+
+
               </DropdownButton>
             </Col>
             <Col xs={2} md={4} ></Col>
@@ -27,7 +43,6 @@ export default class JoinHang extends Component {
               <Button variant="info">Join Hang</Button>{' '}
             </Col>
           </Row>
-
 
         </div>
       </div>
