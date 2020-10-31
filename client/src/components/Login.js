@@ -62,8 +62,8 @@ export default class Login extends Component {
     const { name, value } = event.target;
     let formErrors = this.state.formErrors;
 
-    console.log('Name: ', name);
-    console.log('Value: ', value);
+    // console.log('Name: ', name);
+    // console.log('Value: ', value);
 
     switch (name) {
       case 'username':
@@ -77,7 +77,7 @@ export default class Login extends Component {
       default:
         break;
     }
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state))
+    this.setState({ formErrors, [name]: value }, () => { })
   }
 
   render() {
