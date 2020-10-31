@@ -40,7 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "repository": {
@@ -55,7 +54,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TrevorOtterson/hang/issues"
-=======
->>>>>>> 17eaa328346bd9b2d52fb3c4bb2bae4a1bdc89f0
   }
 }
